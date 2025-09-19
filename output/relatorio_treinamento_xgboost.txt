@@ -1,0 +1,46 @@
+
+RELATÓRIO DE TREINAMENTO - MODELO XGBOOST
+=========================================
+
+CONFIGURAÇÃO DO MODELO:
+- Algoritmo: XGBoost Classifier
+- Features selecionadas: 12
+- Classes mantidas: 8
+- Classes removidas: 2
+
+PERFORMANCE:
+- Acurácia no teste: 0.6818 (68.18%)
+
+CLASSES MANTIDAS:
+  • Cancelamento Comercial
+  • Cancelamento Unidade
+  • Não Formados
+  • Limpeza Academica
+  • Limpeza Financeira
+  • Limpeza de Frequencia
+  • Matriculado
+  • Nunca Compareceu
+
+CLASSES REMOVIDAS (CRÍTICAS):
+  • Cancelamento Interno
+  • Transferência Interna
+
+TOP 5 FEATURES MAIS IMPORTANTES:
+  1. Pend. Financ.: 0.1981
+  2. Faltas Consecutivas: 0.1842
+  3. Pend. Acad.: 0.1362
+  4. Módulo atual: 0.0981
+  5. Cód.Disc. atual: 0.0881
+
+ARQUIVOS GERADOS:
+- output/modelo_xgboost_sem_classes_criticas.pkl
+- output/class_mapping_otimizado.pkl
+- output/matriz_confusao_xgboost_treinamento.png
+- output/importancia_features_xgboost_treinamento.png
+- output/shap_summary_treinamento.png
+- output/shap_bar_treinamento.png
+
+COMO USAR:
+1. Use o script predicao_matricula_corrigida.py para fazer predições
+2. O modelo carrega automaticamente os arquivos .pkl gerados
+3. Forneça um arquivo Excel com os dados dos alunos
